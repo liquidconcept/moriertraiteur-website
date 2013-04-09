@@ -1,0 +1,37 @@
+@import "compass/reset";
+@import "compass/typography/lists/horizontal-list";
+@import "compass/typography/text/replacement";
+
+/*********** COLOR ***********/
+$light_red: #b15d52;
+
+/*********** GLOBAL DESIGN ***************/
+body {
+  background-repeat: top center;
+  background-image: url('/assets/images/bg.png');
+  font-family: 'Cousine', sans-serif;
+}
+
+div#main {
+  margin: 0 auto 0 auto;
+  margin-top: 40px;
+  width: 892px;
+}
+
+header {
+  height: 140px;
+
+  h1 {
+    @include replace-text-with-dimensions('header-bg.png', 50%, 50%, true);
+  }
+}
+
+div#service {
+  min-height: 200px;
+  background-image: url('/assets/images/main-bg.png');
+  background-repeat: repeat-y;
+}
+/*********** GLOBAL ***************/
+a {
+  color: $light_red;
+}
