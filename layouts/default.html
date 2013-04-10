@@ -4,16 +4,54 @@
     <meta charset="utf-8">
     <title>Morier Traiteur<%= @item[:title] %></title>
     <link rel="stylesheet" href="assets/stylesheets/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet' type='text/css'>
   </head>
   <body>
+    <header>
+      <h1>Boucherie Charcuterie Traiteur Du Tilleul</h1>
+    </header>
     <div id="main">
-      <header>
-        <h1></h1>
-      </header>
+      <div id="sidebar">
+        <div id="coordonee">
+          <img src="/assets/images/phone.svg" class="phone"></img><h3>021 624 45 46</h3>
+          <div class="horaire"><img src="/assets/images/clock.svg" class="clock"></img><h4>Horaires</h4></div>
+          <div id="horaire">
+            <p><span>Lundi, mardi,</span><span class="time">07h30 - 12h15</span></p>
+            <p><span>jeudi, vendredi</span><span class="time">14h00 - 18h45</span></p>
+            <br />
+            <p><span>Mercredi</span><span class="time">07h30 - 12h15</span></p>
+            <p><span>Samedi</span><span class="time">07h30 - 13h00</span></p>
+          </div>
+          <p class="important">Pas de service traiteur le dimanche</p>
+        </div>
+        <div id="aPropo">
+          <h3>A propos</h3>
+          <p>La Boucherie du Tilleul existe depuis plus de 50 ans à Prilly. J’ai repris ce commerce depuis 1995 et j’y ai développé entre autre une activité traiteur.</p>
+          <p>Dans le domaine de la boucherie-charcuterie, j’utilise essentiellement de la viande provenant de producteurs de la région que je travaille et transforme à la méthode artisanale. Ainsi sortent de mon four diverses terrine, pâté en croûte, saucisse, foie gras, etc… pour le délice de vos papilles.</p>
+          <p>En plus du traiteur et de la charcuterie, je fais également des livraisons dans diverses collectivités, restaurants et garderies de la région.</p>
+        </div>
+      </div>
       <div id="content">
         <%= yield %>
       </div>
+    </div>
+    <div id="offre">
+      <h1>Demander une offre</h1>
+    </div>
+    <div id="contact">
+      <h1>Contact</h1>
+      <div id="adresse">
+        <p class="adresse">Boucherie – Charcuterie du Tilleul</p>
+        <p class="adresse">Blaise Morier</p>
+        <p class="adresse">Route de Cossonnay 24, 1008 Prilly</p>
+      </div>
+      <div id="contacter">
+        <p class="contacter">Tél.</p>
+        <h3>021 624 45 46</h3>
+        <p class="contacter">Fax</p>
+        <p class="contacter mail"><a href="mailto:morier@moriertraiteur.ch">morier@moriertraiteur.ch</a></p>
+      </div>
+      <iframe id="map" width="855" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Boucherie+du+Tilleul,+Blaise+Morier+&amp;aq=&amp;sll=46.533752,6.607376&amp;sspn=0.676428,1.231842&amp;ie=UTF8&amp;hq=Boucherie+du+Tilleul,+Blaise+Morier&amp;hnear=&amp;t=m&amp;cid=5494728422168565192&amp;ll=46.534776,6.614456&amp;spn=0.165324,0.549316&amp;z=11&amp;&output=embed&iwloc=near"></iframe>
     </div>
   </body>
 </html>

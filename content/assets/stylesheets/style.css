@@ -1,37 +1,284 @@
+/***********************/
+/******* IMPORT ********/
+/***********************/
+
 @import "compass/reset";
-@import "compass/typography/lists/horizontal-list";
-@import "compass/typography/text/replacement";
+@import "compass/typography/lists/horizontal-list"; /* FEATURES FOR THE NAVBAR */
+@import "compass/typography/text/replacement"; /* FEATURES FOR THE LOGO */
+@import "compass/css3/border-radius"; /* FEATURES FOR THE BUTTON */
+@import "compass/css3/box-shadow"; /* FEATURES FOR THE BUTTON */
 
-/*********** COLOR ***********/
+/*************************************/
+/*********** COLOR & other ***********/
+/*************************************/
+
 $light_red: #b15d52;
+$grey: #525252;
+$green: #477a4d;
+$list-space: 5px;
 
+/*****************************************/
 /*********** GLOBAL DESIGN ***************/
+/*****************************************/
+
 body {
-  background-repeat: top center;
-  background-image: url('/assets/images/bg.png');
-  font-family: 'Cousine', sans-serif;
+  background: url('/assets/images/bg.png') repeat top center fixed;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 div#main {
+  background-image: url('/assets/images/main-bg.png');
   margin: 0 auto 0 auto;
-  margin-top: 40px;
-  width: 892px;
+  width: 880px;
 }
 
 header {
   height: 140px;
+  margin: 0 auto 0 auto;
+  margin-top: 40px;
+  width: 880px;
 
   h1 {
     @include replace-text-with-dimensions('header-bg.png', 50%, 50%, true);
   }
 }
 
-div#service {
+article#service {
   min-height: 200px;
-  background-image: url('/assets/images/main-bg.png');
   background-repeat: repeat-y;
 }
+
+div#service {
+  width: 560px;
+  margin-left: 60px;
+  padding-top: 30px;
+}
+
+/**********************************/
 /*********** GLOBAL ***************/
+/**********************************/
 a {
   color: $light_red;
+  font-size: 24px;
+}
+
+ul {
+  @include horizontal-list($list-space);
+}
+
+hr {
+  color: $light_red;
+  border-color: $light_red;
+  border-style: solid;
+}
+
+div.both {
+  clear: both;
+}
+
+.annotation {
+  font-size: 15px;
+  color: $light_red;
+  margin-left: 20px;
+}
+
+h3 {
+  padding-top: 8px;
+  color: white;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+h4 {
+  color: white;
+  font-weight: 700;
+}
+
+/*****************************/
+/********** GENERAL **********/
+/*****************************/
+div#content {
+  width: 700px;
+  color: $light_red;
+
+  h1 {
+    margin: 40px;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  p {
+    color : $grey;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 20px 0 10px 0;
+  }
+
+  a.button {
+    margin: 20px;
+    text-decoration: none;
+    font-size: 25px;
+
+    div.button {
+      padding-top: 20px;
+      width: 400px;
+      height: 70px;
+      background-color: $green;
+      color: white;
+      background-image: linear-gradient(bottom, #406f46 0%, #4d8554 100%);
+      background-image: -o-linear-gradient(bottom, #406f46 0%, #4d8554 100%);
+      background-image: -moz-linear-gradient(bottom, #406f46 0%, #4d8554 100%);
+      background-image: -webkit-linear-gradient(bottom, #406f46 0%, #4d8554 100%);
+      /************* COMPASS *******************/
+      /** BOX SHADOW **/
+      @include box-shadow(rgba(#000, 0.4) 0 0 25px);
+      /** BORDER**/
+      @include border-radius(6px, 6px);
+     /************** COMPASS ******************/
+      text-align: center;
+      font-weight: 700;
+      margin-left: 80px;
+
+      p.telecharger {
+        font-size: 18px;
+        color: inherit;
+        font-weight: 500;
+      }
+    }
+  }
+
+  #platVaisselle {
+
+    #platVaisselle > p {
+      text-align: left;
+      color: #000;
+    }
+
+    .platFroid, .vaisselle {
+      float: right;
+      margin-right: 120px;
+    }
+
+    .locationVaiselle, .platChaud {
+      float: left;
+    }
+  }
+}
+
+#sidebar {
+  float: right;
+  height: 250px;
+  width: 226px;
+  background-color: $light_red;
+
+  #coordonee {
+    margin: 20px 0 0 20px;
+
+    .phone, .clock {
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    }
+
+    .horaire {
+      margin-top: 40px;
+
+      .clock {
+      width: 20px;
+      height: 20px;
+      }
+    }
+
+    #horaire {
+      margin-top: 20px;
+
+      p {
+        line-height: 20px;
+        font-size: 14px;
+        color: white;
+      }
+
+      span.time {
+        float: right;
+        margin-right: 20px;
+      }
+    }
+    .important {
+      color: #cdbbb6;
+      font-size: 13px;
+    }
+  }
+
+  #aPropo {
+    margin: 20px 40px 0 20px;
+
+    h3 {
+      color: $light_red;
+    }
+
+    p {
+      margin: 10px 0 10px 0;
+      font-size: 14px;
+    }
+  }
+}
+
+div#offre {
+  width: 860px;
+  background-color: $light_red;
+  margin-left: 16px;
+
+  h1 {
+    color: white;
+    text-align: left;
+  }
+}
+
+div#contact {
+
+  #map {
+    margin-left: 20px;
+  }
+
+  h1 {
+    margin: 1px 20px 40px 40px;
+    float: left;
+    text-align: left;
+  }
+
+  div#adresse {
+      float: left;
+
+    p.adresse {
+      text-align: left;
+    }
+  }
+
+  div#contacter {
+    float: left;
+    margin-left: 90px;
+
+    p.contacter {
+      text-align: left;
+      float: left;
+      font-size: 15px;
+    }
+
+    p.mail {
+      float: none;
+
+      a {
+        text-decoration: none;
+        color: $grey;
+        font-size: 16px;
+      }
+    }
+    h3 {
+      color: $light_red;
+    }
+  }
 }
