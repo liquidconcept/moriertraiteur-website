@@ -1,10 +1,15 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <title>Morier Traiteur<%= @item[:title] %></title>
-    <link rel="stylesheet" href="assets/stylesheets/style.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/stylesheets/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    <script type="text/javascript" src="/assets/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/application.js"></script>
+    <script src="/assets/javascripts/modernizr.js"></script>
   </head>
   <body>
     <header>
@@ -13,8 +18,9 @@
     <div id="main">
       <div id="sidebar">
         <div id="coordonee">
-          <img src="/assets/images/phone.svg" class="phone"></img><h3>021 624 45 46</h3>
-          <div class="horaire"><img src="/assets/images/clock.svg" class="clock"></img><h4>Horaires</h4></div>
+          <img src="/assets/images/phone.png" class="phone"></img><h3>021 624 45 46</h3>
+          <p class="important">Pas de service traiteur le dimanche</p>
+          <div class="horaire"><img src="/assets/images/clock.png" class="clock"></img><h4>Horaires</h4></div>
           <div id="horaire">
             <p><span>Lundi, mardi,</span><span class="time">07h30 - 12h15</span></p>
             <p><span>jeudi, vendredi</span><span class="time">14h00 - 18h45</span></p>
@@ -22,7 +28,6 @@
             <p><span>Mercredi</span><span class="time">07h30 - 12h15</span></p>
             <p><span>Samedi</span><span class="time">07h30 - 13h00</span></p>
           </div>
-          <p class="important">Pas de service traiteur le dimanche</p>
         </div>
         <div id="aPropo">
           <h3>A propos</h3>
@@ -37,6 +42,36 @@
     </div>
     <div id="offre">
       <h1>Demander une offre</h1>
+      <form method="POST" action="/index">
+        <div id="information">
+          <h3>Coordonnées</h3>
+          <div><p class="input">Nom & Prénom</p><input name="message_request[name]" size="20" type="text" value="" ></input></div>
+          <div><p class="input">Numéro de téléphone</p><input name="message_request[phone]" size="20" type="text" value="" ></input></div>
+          <div><p class="input">Email</p><input name="message_request[mail]" size="20" type="email" value=""></input></div>
+          <h3>Vos besoins</h3>
+          <div><p class="input">Nombre de personne</p><input name="message_request[person]" size="5" type="text" value=""></input></div>
+          <div><p class="input">Date de l'événement</p><input name="message_request[date]" id="datepicker" size="20" type="text" value=""></input></div>
+          <div><p class="input">Heure de l'événement</p><input name="message_request[time]" size="20" type="text" value=""></input></div>
+          <div><p class="input">Budget par personne</p><input name="message_request[budget]" size="10" type="text" value=""></input></div>
+        </div>
+        <div id="menu">
+          <h3>Type de menu</h3>
+          <div><p class="input">Buffet de grillades</p><input name="message_request[buffet]" size="10" type="checkbox" value="Buffet de grillades -"></input></div>
+          <div><p class="input">Apéro</p><input name="message_request[apero]" size="10" type="checkbox" value=" Apéro -"></input></div>
+          <div><p class="input">Menus chauds</p><input name="message_request[menuchaud]" size="10" type="checkbox" value=" Menus chauds -"></input></div>
+          <div><p class="input">Chasse</p><input name="message_request[chasse]" size="10" type="checkbox" value=" Chasse -"></input></div>
+          <div><p class="input">Salades</p><input name="message_request[salade]" size="10" type="checkbox" value=" Salades -"></input></div>
+          <div><p class="input">Assiettes froides</p><input name="message_request[assiettesfroides]" size="10" type="checkbox" value=" Assiettes froides -"></input></div>
+          <div><p class="input">Repas de l’entrée au dessert</p><input name="message_request[entreedessert]" size="10" type="checkbox" value=" Repas de l’entrée au dessert -"></input></div>
+          <div><p class="input">Fromages et pains </p><input name="message_request[fromagepain]" size="10" type="checkbox" value=" Fromages et pains -"></input></div>
+          <div><p class="input">Desserts </p><input name="message_request[dessert]" size="10" type="checkbox" value=" Desserts -"></input></div>
+          <div><p class="input">Fondues de viandes</p><input name="message_request[fondueviande]" size="10" type="checkbox" value=" Fondues de viandes -"></input></div>
+          <div><p class="input">Buffets froids</p><input name="message_request[buffetfroid]" size="10" type="checkbox" value=" Buffets froids -"></input></div>
+          <div><p class="input">Buffets froids et chauds</p><input name="message_request[buffetfroidchaud]" size="10" type="checkbox" value=" Buffets froids et chauds"></input></div>
+        </div>
+        <div class="both"></div>
+        <a class="small button"><button name="commit" type="submit" value="Envoyer" id="button"><div class="small button">Envoyer<p class="telecharger">la demande d'offre</p></div></button></a>
+      </form>
     </div>
     <div id="contact">
       <h1>Contact</h1>
@@ -46,12 +81,11 @@
         <p class="adresse">Route de Cossonnay 24, 1008 Prilly</p>
       </div>
       <div id="contacter">
-        <p class="contacter">Tél.</p>
+        <p class="contacter">Tél.<br/>Fax</p>
         <h3>021 624 45 46</h3>
-        <p class="contacter">Fax</p>
         <p class="contacter mail"><a href="mailto:morier@moriertraiteur.ch">morier@moriertraiteur.ch</a></p>
       </div>
-      <iframe id="map" width="855" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Boucherie+du+Tilleul,+Blaise+Morier+&amp;aq=&amp;sll=46.533752,6.607376&amp;sspn=0.676428,1.231842&amp;ie=UTF8&amp;hq=Boucherie+du+Tilleul,+Blaise+Morier&amp;hnear=&amp;t=m&amp;cid=5494728422168565192&amp;ll=46.534776,6.614456&amp;spn=0.165324,0.549316&amp;z=11&amp;&output=embed&iwloc=near"></iframe>
+      <iframe id="map" width="855" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Boucherie+du+Tilleul,+Blaise+Morier&amp;aq=&amp;sll=46.533752,6.607376&amp;sspn=0.676428,1.233215&amp;ie=UTF8&amp;hq=Boucherie+du+Tilleul,+Blaise+Morier&amp;hnear=&amp;t=m&amp;ll=46.533757,6.607375&amp;spn=0.005166,0.00912&amp;z=16&amp;iwloc=A&amp;&output=embed&iwloc=near"></iframe>
     </div>
   </body>
 </html>

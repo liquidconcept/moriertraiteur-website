@@ -1,0 +1,19 @@
+Contact
+_______
+
+Coordonnées :
+=============
+Nom et Prénom : <%= params[:message_request][:name] %>
+Numéro de téléphone : <%= params[:message_request][:phone] %>
+Email : <%= params[:message_request][:mail] %>
+
+Vos besoins:
+============
+Nombre de personne : <%= params[:message_request][:person] %>
+Date de l'événemment : <%= params[:message_request][:date] %>
+Heure de l'événement : <%= params[:message_request][:time] %>
+Budget par personne : <%= params[:message_request][:budget] %>
+
+Type de menu:
+=============
+<%= params[:message_request][:buffet] %><%= params[:message_request][:apero] %><%= params[:message_request][:menuchaud] %><%= params[:message_request][:chasse] %><%= params[:message_request][:salade] %><%= params[:message_request][:assiettesfroides] %><%= params[:message_request][:entreedessert] %><%= params[:message_request][:fromagepain] %><%= params[:message_request][:dessert] %><%= params[:message_request][:fondueviande] %><%= params[:message_request][:buffetfroid] %><%= params[:message_request][:buffetfroidchaud] %>

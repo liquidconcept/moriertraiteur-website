@@ -4,7 +4,7 @@
 
 @import "compass/reset";
 @import "compass/typography/lists/horizontal-list"; /* FEATURES FOR THE NAVBAR */
-@import "compass/typography/text/replacement"; /* FEATURES FOR THE LOGO */
+@import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
 @import "compass/css3/border-radius"; /* FEATURES FOR THE BUTTON */
 @import "compass/css3/box-shadow"; /* FEATURES FOR THE BUTTON */
 
@@ -83,6 +83,7 @@ div.both {
 }
 
 h3 {
+  margin: 10px 0 10px 0;
   padding-top: 8px;
   color: white;
   font-size: 23px;
@@ -92,6 +93,13 @@ h3 {
 h4 {
   color: white;
   font-weight: 700;
+}
+
+/*****************************/
+/*********** IE **************/
+/*****************************/
+a > img {
+  text-decoration: none; border: none;
 }
 
 /*****************************/
@@ -115,17 +123,33 @@ div#content {
   h2 {
     font-size: 20px;
     padding: 20px 0 10px 0;
+    text-align: center;
+  }
+
+  .small {
+    max-width: 200px;
+  }
+
+  button {
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   a.button {
     margin: 20px;
     text-decoration: none;
     font-size: 25px;
+    width: 400px;
+    height: 70px;
 
-    div.button {
-      padding-top: 20px;
-      width: 400px;
-      height: 70px;
+    .button {
+      padding-top: 10px;
+      padding-bottom: 10px;
       background-color: $green;
       color: white;
       background-image: linear-gradient(bottom, #406f46 0%, #4d8554 100%);
@@ -140,12 +164,12 @@ div#content {
      /************** COMPASS ******************/
       text-align: center;
       font-weight: 700;
-      margin-left: 80px;
 
       p.telecharger {
         font-size: 18px;
         color: inherit;
         font-weight: 500;
+        text-align: center;
       }
     }
   }
@@ -170,7 +194,7 @@ div#content {
 
 #sidebar {
   float: right;
-  height: 250px;
+  height: 260px;
   width: 226px;
   background-color: $light_red;
 
@@ -185,7 +209,7 @@ div#content {
     }
 
     .horaire {
-      margin-top: 40px;
+      margin-top: 20px;
 
       .clock {
       width: 20px;
@@ -208,8 +232,10 @@ div#content {
       }
     }
     .important {
-      color: #cdbbb6;
-      font-size: 13px;
+      text-align: center;
+      padding-top: 10px;
+      color: white;
+      font-size: 17px;
     }
   }
 
@@ -228,17 +254,48 @@ div#content {
 }
 
 div#offre {
-  width: 860px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 820px;
   background-color: $light_red;
+  padding-left: 40px;
   margin-left: 16px;
 
   h1 {
+    margin: 0;
     color: white;
     text-align: left;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+
+  form {
+
+    div#information {
+      float: left;
+    }
+
+    div#menu {
+      float: right;
+      margin-right: 100px;
+    }
+
+    p {
+      display: inline-block;
+      min-width: 200px;
+      text-align: left;
+      color: black;
+
+      *display: inline; /* IE < 8 */ *zoom : 1; /* IE < 8 */
+    }
   }
 }
 
 div#contact {
+  margin-top: 50px;
 
   #map {
     margin-left: 20px;
@@ -251,7 +308,8 @@ div#contact {
   }
 
   div#adresse {
-      float: left;
+    float: left;
+    font-size: 16px;
 
     p.adresse {
       text-align: left;
@@ -259,17 +317,18 @@ div#contact {
   }
 
   div#contacter {
+    width: 180px;
     float: left;
     margin-left: 90px;
 
     p.contacter {
       text-align: left;
       float: left;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     p.mail {
-      float: none;
+      padding-top: 10px;
 
       a {
         text-decoration: none;
@@ -277,7 +336,9 @@ div#contact {
         font-size: 16px;
       }
     }
+
     h3 {
+      margin: 0 0 0 35px;
       color: $light_red;
     }
   }

@@ -42,14 +42,11 @@ route '/assets/images/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
-route '/assets/stylesheets/_*/' do
-end
-
 route '/assets/stylesheets/*/' do
   item.identifier.chop + '.css'
 end
 
-route '/assets/javascript/*/' do
+route '/assets/javascripts/*/' do
   item.identifier.chop + '.js'
 end
 
@@ -67,4 +64,3 @@ end
 
 ############ Layout ############
 layout '*', :erb
-

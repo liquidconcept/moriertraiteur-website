@@ -4,15 +4,14 @@
 
 project_path    = '.'
 
-http_path             = '/'
-http_stylesheets_path = "/assets/stylesheets"
-http_javascripts_path = "/assets/stylesheets"
-http_images_path      = "/assets/images"
 
-css_dir         = 'public/stylesheets'
-sass_dir        = 'content/stylesheets'
-images_dir      = 'content/assets/images'
-javascripts_dir = 'content/assets/javascripts'
+http_path             = '/'
+http_stylesheets_path = '/assets/stylesheets'
+http_javascripts_path = '/assets/javascripts'
+http_images_path      = '/assets/images'
+
+images_dir            = 'content/assets/images'
+
 
 output_style    = ENV['RACK_ENV'] != 'production' ? :nested : :compressed
 
