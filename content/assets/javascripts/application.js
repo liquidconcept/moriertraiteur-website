@@ -25,3 +25,7 @@ jQuery(function($){
                 yearSuffix: ''};
         $.datepicker.setDefaults($.datepicker.regional['fr']);
 });
+
+$(document).ready(function () {
+    $('form').h5Validate();
+});

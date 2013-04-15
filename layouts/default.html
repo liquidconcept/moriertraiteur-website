@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/assets/javascripts/jquery-ui.js"></script>
     <script type="text/javascript" src="/assets/javascripts/application.js"></script>
     <script src="/assets/javascripts/modernizr.js"></script>
+    <script src="/assets/javascripts/h5validate.js"></script>
   </head>
   <body>
     <header>
@@ -45,14 +46,14 @@
       <form method="POST" action="/index">
         <div id="information">
           <h3>Coordonnées</h3>
-          <div><p class="input">Nom & Prénom</p><input name="message_request[name]" size="20" type="text" value="" ></input></div>
-          <div><p class="input">Numéro de téléphone</p><input name="message_request[phone]" size="20" type="text" value="" ></input></div>
-          <div><p class="input">Email</p><input name="message_request[mail]" size="20" type="email" value=""></input></div>
+          <div><p class="input">Nom & Prénom</p><input name="message_request[name]" size="20" type="text" value="" required></input></div>
+          <div><p class="input">Numéro de téléphone</p><input name="message_request[phone]" size="20" type="text" value="" required ></input></div>
+          <div><p class="input">Email</p><input name="message_request[mail]" size="20" type="email" value="" required></input></div>
           <h3>Vos besoins</h3>
-          <div><p class="input">Nombre de personne</p><input name="message_request[person]" size="5" type="text" value=""></input></div>
-          <div><p class="input">Date de l'événement</p><input name="message_request[date]" id="datepicker" size="20" type="text" value=""></input></div>
-          <div><p class="input">Heure de l'événement</p><input name="message_request[time]" size="20" type="text" value=""></input></div>
-          <div><p class="input">Budget par personne</p><input name="message_request[budget]" size="10" type="text" value=""></input></div>
+          <div><p class="input">Nombre de personne</p><input name="message_request[person]" size="5" type="text" value="" required></input></div>
+          <div><p class="input">Date de l'événement</p><input name="message_request[date]" id="datepicker" size="20" type="text" value="" required></input></div>
+          <div><p class="input">Heure de l'événement</p><input name="message_request[time]" size="20" type="text" value="" required></input></div>
+          <div><p class="input">Budget par personne</p><input name="message_request[budget]" size="10" type="text" value="" required></input></div>
         </div>
         <div id="menu">
           <h3>Type de menu</h3>
