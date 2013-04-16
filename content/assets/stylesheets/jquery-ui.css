@@ -356,7 +356,7 @@
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
 	border: 1px solid #b15d52;
-	background: #b15d52 url(/assets/images/ui-bg_diagonals-thick_18_b81900_40x40.png) 50% 50% repeat;
+	background: red url(/assets/images/animated-Overlay.gif) 50% 50% repeat;
 	color: #ffffff;
 }
 .ui-state-error a,
