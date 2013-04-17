@@ -3,6 +3,7 @@
 /***********************/
 
 @import "compass/reset";
+@import "compass/utilities/general/clearfix";
 @import "compass/typography/lists/horizontal-list"; /* FEATURES FOR THE NAVBAR */
 @import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
 @import "compass/css3/border-radius"; /* FEATURES FOR THE BUTTON */
@@ -15,6 +16,7 @@
 $light_red: #b15d52;
 $grey: #525252;
 $green: #477a4d;
+$white: #FFF;
 $list-space: 5px;
 
 /*****************************************/
@@ -66,7 +68,7 @@ ul {
   @include horizontal-list($list-space);
 }
 
-hr {
+hr.service {
   color: $light_red;
   border-color: $light_red;
   border-style: solid;
@@ -148,8 +150,7 @@ div#content {
     height: 70px;
 
     .button {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding: 20px 20px;
       background-color: $green;
       color: white;
       background-image: linear-gradient(bottom, #406f46 0%, #4d8554 100%);
@@ -165,11 +166,12 @@ div#content {
       text-align: center;
       font-weight: 700;
 
-      p.telecharger {
+      span.telecharger {
         font-size: 18px;
         color: inherit;
         font-weight: 500;
         text-align: center;
+        padding: 0 5px;
       }
     }
   }
@@ -258,12 +260,14 @@ div#offre {
   padding-top: 20px;
   padding-bottom: 20px;
   width: 820px;
+  height: 470px;
   background-color: $light_red;
   padding-left: 40px;
   margin-left: 16px;
 
   h1 {
     margin: 0;
+    padding-bottom: 20px;
     color: white;
     text-align: left;
   }
@@ -290,6 +294,87 @@ div#offre {
       color: black;
 
       *display: inline; /* IE < 8 */ *zoom : 1; /* IE < 8 */
+    }
+
+    hr {
+      width: 770px;
+      border: solid $white 2px;
+      margin: 20px 0;
+    }
+
+    .agreement {
+      width: 70%;
+      float: left;
+
+      #ligthbox_agreement {
+        width: 770px;
+        position: absolute;
+        top: 990px;
+        margin: 20px auto;
+        padding: 20px 40px 65px 40px;
+        margin-left: -40px;
+        border: solid $light_red 5px;
+        background-color: $white;
+        display: none;
+
+        p {
+          font-size: 16px;
+        }
+
+        #close {
+          float: right;
+          width: 10px;
+
+          a {
+            text-decoration: none;
+
+            span {
+              width: 10px;
+              color: $light_red;
+              font-size: 1.5em;
+              font-weight: bold;
+            }
+          } 
+        }
+
+        h1 {
+          color: $light_red;
+        }
+
+        h3 {
+          color: $light_red;
+        }
+
+        li {
+          margin-bottom: 10px;
+        }
+      }
+
+      p.first {
+        font-size: 13px;
+        margin-bottom: 20px;
+
+        .agreement_link {
+          color: $white;
+          font-size: 13px;
+          text-decoration: underline;
+        }
+      }
+
+      p {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      #button_form {
+        width: 30%;
+        float: right;
+
+        .demand {
+          font-size: 12px;
+        }
+      }
     }
   }
 }

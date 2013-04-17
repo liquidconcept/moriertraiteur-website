@@ -1,3 +1,7 @@
+// =require jquery
+// =require jquery-ui
+// =require jquery.h5validate
+
 $(function() {
   $( "#datepicker" ).datepicker();
 });
@@ -29,3 +33,19 @@ jQuery(function($){
 $(document).ready(function () {
     $('form').h5Validate();
 });
+
+// Agreement condition lightbox
+$(function() {
+  $('.agreement_link').on('click', function(event) {
+    event.preventDefault();
+    $('#ligthbox_agreement').fadeIn('slow').show();
+
+    $('#close').on('click', function(event) {
+      event.preventDefault();
+      $('#ligthbox_agreement').fadeOut('slow', function() {
+        $('#ligthbox_agreement').hide();
+      });
+    });
+  });
+});
+
