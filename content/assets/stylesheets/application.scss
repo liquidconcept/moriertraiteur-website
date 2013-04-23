@@ -2,12 +2,16 @@
 /******* IMPORT ********/
 /***********************/
 
+@import "jquery-ui";
+
 @import "compass/reset";
 @import "compass/utilities/general/clearfix";
 @import "compass/typography/lists/horizontal-list"; /* FEATURES FOR THE NAVBAR */
 @import "compass/typography/text/replacement";  /*FEATURES FOR THE LOGO*/
 @import "compass/css3/border-radius"; /* FEATURES FOR THE BUTTON */
 @import "compass/css3/box-shadow"; /* FEATURES FOR THE BUTTON */
+
+@import url("http://fonts.googleapis.com/css?family=Roboto Condensed");
 
 /*************************************/
 /*********** COLOR & other ***********/
@@ -24,12 +28,12 @@ $list-space: 5px;
 /*****************************************/
 
 body {
-  background: url('/assets/images/bg.png') repeat top center fixed;
+  background: asset-data-uri('bg.png') repeat top center fixed;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 div#main {
-  background-image: url('/assets/images/main-bg.png');
+  background-image: asset-data-uri('main-bg.png');
   margin: 0 auto 0 auto;
   width: 880px;
 }

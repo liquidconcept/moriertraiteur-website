@@ -1,31 +1,22 @@
 #!/usr/bin/env ruby
 
-# A few helpful tips about the Rules file:
-#
-# * The string given to #compile and #route are matching patterns for
-#   identifiers--not for paths. Therefore, you can’t match on extension.
-#
-# * The order of rules is important: for each item, only the first matching
-#   rule is applied.
-#
-# * Item identifiers start and end with a slash (e.g. “/about/” for the file
-#   “content/about.html”). To select all children, grandchildren, … of an
-#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
-#   because “*” matches zero or more characters.
-
-############ Compass ############
-require 'compass'
-Compass.add_project_configuration 'config/compass.rb'
+require File.expand_path('../config/nanoc', __FILE__)
 
 ############ Compile ############
-compile '/assets/images/*/' do
+
+compile %r{/assets/(stylesheets|javascripts)/.+/} do
+  filter :sprockets, {
+    :css_compressor => Nanoc.production? ? :scss : nil,
+    :js_compressor => Nanoc.production? ? :uglifier : nil
+  }
 end
 
-compile '/assets/stylesheets/*/' do
-  filter :sass, Compass.sass_engine_options
-end
-
-compile '/assets/javascripts/*/' do
+compile %r{/assets/(stylesheets|javascripts)/.+/}, :rep => :gzip do
+  filter :sprockets, {
+    :css_compressor => Nanoc.production? ? :scss : nil,
+    :js_compressor => Nanoc.production? ? :uglifier : nil
+  }
+  filter :gzip
 end
 
 compile '*' do
@@ -38,16 +29,13 @@ compile '*' do
 end
 
 ############ Route ############
-route '/assets/images/' do
-  item.identifier.chop + '.' + item[:extension]
+
+route '/assets/*/' do
+  Nanoc::Helpers::Sprockets.asset_path(item)
 end
 
-route '/assets/stylesheets/*/' do
-  item.identifier.chop + '.css'
-end
-
-route '/assets/javascripts/*/' do
-  item.identifier.chop + '.js'
+route '/assets/*/', :rep => :gzip do
+  Nanoc::Helpers::Sprockets.asset_path(item) + '.gz'
 end
 
 route '/htaccess/' do
@@ -63,4 +51,6 @@ route '*' do
 end
 
 ############ Layout ############
+
 layout '*', :erb
+
