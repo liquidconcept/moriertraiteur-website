@@ -202,7 +202,7 @@ div#content {
 
     .platFroid, .vaisselle {
       float: right;
-      margin-right: 17px;
+      margin-right: 150px;
     }
 
     .locationVaiselle, .platChaud {
@@ -279,12 +279,16 @@ div#ligthbox_service {
   top: 225px;
   margin: 20px auto;
   margin-left: -35px;
-  padding: 20px 40px 0 20px;
+  padding: 5px 11px 0 20px;
   border: solid $light_red 5px;
   background-color: $white;
   display: none;
-  overflow-y: scroll;
-  max-height: 700px;
+
+  #listprice {
+    overflow-y: scroll;
+    max-height: 650px;
+    width: 541px;
+  }
 
   p , a {
     font-size: 16px;
@@ -293,12 +297,13 @@ div#ligthbox_service {
   }
 
   span {
-    color: red;
+    color: $light_red;
   }
 
   .price2 {
-    color: blue;
+    color: $green;
   }
+
 
   #close2 {
     float: right;
@@ -336,7 +341,7 @@ div#offre {
   padding-top: 20px;
   padding-bottom: 20px;
   width: 820px;
-  height: 645px;
+  height: 700px;
   background-color: $light_red;
   padding-left: 40px;
   margin-left: 16px;
@@ -355,6 +360,10 @@ div#offre {
   form {
 
     div#information {
+      float: left;
+    }
+
+    #comment {
       float: left;
     }
 
@@ -471,6 +480,7 @@ div#contact {
   div#adresse {
     float: left;
     font-size: 16px;
+    margin-top: 10px;
 
     p.adresse {
       text-align: left;
