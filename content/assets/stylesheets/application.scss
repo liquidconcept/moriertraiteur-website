@@ -39,7 +39,7 @@ div#main {
 }
 
 header {
-  height: 140px;
+  height: 130px;
   margin: 0 auto 0 auto;
   margin-top: 40px;
   width: 880px;
@@ -68,6 +68,13 @@ a {
   font-size: 24px;
 }
 
+li {
+
+  a {
+    text-decoration: none;
+  }
+}
+
 ul {
   @include horizontal-list($list-space);
 }
@@ -76,6 +83,7 @@ hr.service {
   color: $light_red;
   border-color: $light_red;
   border-style: solid;
+  margin: 20px 0 20px 0;
 }
 
 div.both {
@@ -101,6 +109,10 @@ h4 {
   font-weight: 700;
 }
 
+a > div {
+  font-size: 16px;
+}
+
 /*****************************/
 /*********** IE **************/
 /*****************************/
@@ -123,13 +135,14 @@ div#content {
 
   p {
     color : $grey;
-    text-align: center;
+    text-align: left;
+    line-height: 20px;
   }
 
   h2 {
     font-size: 20px;
     padding: 20px 0 10px 0;
-    text-align: center;
+    text-align: left;
   }
 
   .small {
@@ -189,7 +202,7 @@ div#content {
 
     .platFroid, .vaisselle {
       float: right;
-      margin-right: 120px;
+      margin-right: 150px;
     }
 
     .locationVaiselle, .platChaud {
@@ -200,7 +213,7 @@ div#content {
 
 #sidebar {
   float: right;
-  height: 260px;
+  height: 275px;
   width: 226px;
   background-color: $light_red;
 
@@ -246,16 +259,80 @@ div#content {
   }
 
   #aPropo {
-    margin: 20px 40px 0 20px;
+    margin: 30px 40px 0 20px;
 
     h3 {
       color: $light_red;
     }
 
     p {
+      line-height: 20px;
       margin: 10px 0 10px 0;
       font-size: 14px;
     }
+  }
+}
+
+div#ligthbox_service {
+  width: 540px;
+  position: absolute;
+  top: 225px;
+  margin: 20px auto;
+  margin-left: -35px;
+  padding: 5px 11px 0 20px;
+  border: solid $light_red 5px;
+  background-color: $white;
+  display: none;
+
+  #listprice {
+    overflow-y: scroll;
+    max-height: 650px;
+    width: 541px;
+  }
+
+  p , a {
+    font-size: 16px;
+    color: black;
+    line-height: 25px;
+  }
+
+  span {
+    color: $light_red;
+  }
+
+  .price2 {
+    color: $green;
+  }
+
+
+  #close2 {
+    float: right;
+    width: 10px;
+
+    a {
+      text-decoration: none;
+
+      span {
+        width: 10px;
+        color: $light_red;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+  }
+
+  h1 {
+    color: $light_red;
+  }
+
+  h3 {
+    color: $light_red;
+  }
+
+  li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: black;
   }
 }
 
@@ -264,7 +341,7 @@ div#offre {
   padding-top: 20px;
   padding-bottom: 20px;
   width: 820px;
-  height: 470px;
+  height: 700px;
   background-color: $light_red;
   padding-left: 40px;
   margin-left: 16px;
@@ -286,6 +363,10 @@ div#offre {
       float: left;
     }
 
+    #comment {
+      float: left;
+    }
+
     div#menu {
       float: right;
       margin-right: 100px;
@@ -303,7 +384,7 @@ div#offre {
     hr {
       width: 770px;
       border: solid $white 2px;
-      margin: 20px 0;
+      margin: 34px 0 34px 0px
     }
 
     .agreement {
@@ -338,7 +419,7 @@ div#offre {
               font-size: 1.5em;
               font-weight: bold;
             }
-          } 
+          }
         }
 
         h1 {
@@ -391,7 +472,7 @@ div#contact {
   }
 
   h1 {
-    margin: 1px 20px 40px 40px;
+    margin: 1px 25px 40px 40px;
     float: left;
     text-align: left;
   }
@@ -399,6 +480,7 @@ div#contact {
   div#adresse {
     float: left;
     font-size: 16px;
+    margin-top: 10px;
 
     p.adresse {
       text-align: left;

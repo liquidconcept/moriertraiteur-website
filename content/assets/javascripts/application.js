@@ -46,5 +46,19 @@ $(function() {
 
     $('#ligthbox_agreement').fadeOut('slow');
   });
+// Service lightbox
+  $('#ligthbox_service').hide();
+
+  $('.service_link').on('click', function(event) {
+    event.preventDefault();
+
+    $('#ligthbox_service').fadeIn('slow');
+  });
+
+  $('#close2').on('click', function(event) {
+    event.preventDefault();
+
+    $('#ligthbox_service').fadeOut('slow');
+  });
 });
 
