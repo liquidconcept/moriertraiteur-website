@@ -211,7 +211,7 @@ div#content {
     }
 
     .horaire {
-      margin-top: 20px;
+      margin-top: 10px;
 
       .clock {
       width: 20px;
@@ -220,7 +220,7 @@ div#content {
     }
 
     #horaire {
-      margin-top: 20px;
+      margin-top: 15px;
 
       p {
         line-height: 20px;
@@ -228,9 +228,17 @@ div#content {
         color: white;
       }
 
-      span.time {
+      .time {
         float: right;
         margin-right: 20px;
+      }
+
+      .last {
+        margin-bottom: 5px;
+      }
+
+      .bold {
+        font-weight: bold;
       }
     }
     .important {
