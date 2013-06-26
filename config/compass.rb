@@ -4,11 +4,17 @@
 
 project_path    = '.'
 
+
 http_path             = '/'
 http_stylesheets_path = '/assets/stylesheets'
 http_javascripts_path = '/assets/javascripts'
 http_images_path      = '/assets/images'
-http_fonts_path       = '/assets/fonts'
 
 images_dir            = 'content/assets/images'
 
+
+output_style    = ENV['RACK_ENV'] != 'production' ? :nested : :compressed
+
+sass_options = {
+  :syntax => :scss
+}

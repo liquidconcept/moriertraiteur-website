@@ -3,8 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Morier Traiteur<%= @item[:title] %></title>
-    <link rel="stylesheet" href="<%= stylesheet_path 'application' %>" media="screen">
-    <script src="<%= javascript_path 'application' %>"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/stylesheets/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    <script type="text/javascript" src="/assets/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/application.js"></script>
+    <script src="/assets/javascripts/modernizr.js"></script>
+    <script src="/assets/javascripts/h5validate.js"></script>
   </head>
   <body>
     <header>
@@ -13,9 +19,9 @@
     <div id="main">
       <div id="sidebar">
         <div id="coordonee">
-          <img src="<%= image_path('phone.png') %>" class="phone" /><h3>021 624 45 46</h3>
+          <img src="/assets/images/phone.png" class="phone"></img><h3>021 624 45 46</h3>
           <p class="important">Pas de service traiteur le dimanche</p>
-          <div class="horaire"><img src="<%= image_path('clock.png') %>" class="clock" /><h4>Horaires</h4></div>
+          <div class="horaire"><img src="/assets/images/clock.png" class="clock"></img><h4>Horaires</h4></div>
           <div id="horaire">
             <p class="bold">lundi, mardi, jeudi, vendredi :</p>
             <p>Matin : <span class="time">07h30 - 12h15</span></p>
@@ -63,11 +69,6 @@
           <div><p class="input">Fondues de viandes</p><input name="message_request[fondueviande]" size="10" type="checkbox" value=" Fondues de viandes -"></input></div>
           <div><p class="input">Buffets froids</p><input name="message_request[buffetfroid]" size="10" type="checkbox" value=" Buffets froids -"></input></div>
           <div><p class="input">Buffets froids et chauds</p><input name="message_request[buffetfroidchaud]" size="10" type="checkbox" value=" Buffets froids et chauds"></input></div>
-        </div>
-        <div class="both"></div>
-        <div id="comment">
-          <h3>Votre commentaire</h3>
-          <div><textarea cols="100" name="message_request[comment]" rows="7" required></textarea></div>
         </div>
         <div class="both"></div>
         <hr />
@@ -128,17 +129,7 @@
         <h3>021 624 45 46</h3>
         <p class="contacter mail"><a href="mailto:morier@moriertraiteur.ch">morier@moriertraiteur.ch</a></p>
       </div>
-      <iframe id="map" width="855" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ch/maps?ie=UTF8&amp;cid=5494728422168565192&amp;q=Boucherie+du+Tilleul,+Blaise+Morier&amp;gl=CH&amp;hl=fr&amp;ll=46.533752,6.607376&amp;spn=0.006295,0.006295&amp;t=m&amp;iwloc=near&amp;output=embed"></iframe>
+      <iframe id="map" width="855" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Boucherie+du+Tilleul,+Blaise+Morier&amp;aq=&amp;sll=46.533752,6.607376&amp;sspn=0.676428,1.233215&amp;ie=UTF8&amp;hq=Boucherie+du+Tilleul,+Blaise+Morier&amp;hnear=&amp;t=m&amp;ll=46.533757,6.607375&amp;spn=0.005166,0.00912&amp;z=16&amp;iwloc=A&amp;&output=embed&iwloc=near"></iframe>
     </div>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-2241355-21', 'moriertraiteur.ch');
-      ga('send', 'pageview');
-
-    </script>
   </body>
 </html>
